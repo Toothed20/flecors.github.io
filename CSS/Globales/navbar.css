@@ -1,0 +1,83 @@
+/* ------------------ Barra Navegacion ------------------ */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 4rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+ 
+.nav-text {
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    color: white;
+    font-size: 15px;
+    padding-right: 1rem;
+}
+
+.open-menu, 
+.close-menu {
+    display: none;
+}
+
+/* 480 */
+@media (max-width: 768px) {
+    .open-menu, 
+    .close-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+    }
+
+    .close-menu {
+        margin-bottom: 2rem;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+        height: 100vh;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+        gap: 2.5rem;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+}

@@ -1,0 +1,100 @@
+/*------------------  Footer ------------------*/
+footer {
+    background: #181A1B;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2.5rem;
+}
+
+.datos {
+    max-width: 40%;
+}
+
+.datos-grupo {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-footer {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.enlace-datos {
+    font-family: 'Poppins';
+    color: white;
+    font-size: 20px;
+}
+
+.enlace-datos1, .enlace-datos2 {
+    transition: all 0.5s ease-in-out;
+}
+
+.enlace-datos1:hover {
+    color: #25D366;
+}
+
+.enlace-datos1:hover {
+    color: #25D366;
+}
+
+.enlace-datos2:hover {
+    color: #E8B552;
+}
+
+.logo-footer {
+    height: 9rem;
+    width: 9rem;
+}
+
+.titulo-derechos {
+    font-family: 'Poppins';
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #181A1B;
+
+}
+
+/*------------------  Footer ------------------*/
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+
+    .title-footer {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .datos-grupo {
+        justify-content: center;
+    }
+    
+    .logo-footer {
+        margin-top: 1.5rem;
+    }
+
+    .enlace-datos {
+        font-size: 20px;
+    }
+}

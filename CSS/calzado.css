@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------ Barra Navegacion ------------------ */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 4rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+ 
+.nav-text {
+    font-family: 'Merriweather Sans';
+    font-weight: 300;
+    color: white;
+    font-size: 15px;
+    padding-right: 1rem;
+}
+
+.open-menu, 
+.close-menu {
+    display: none;
+}
+
+/* 480 */
+@media (max-width: 768px) {
+    .open-menu, 
+    .close-menu {
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+    }
+
+    .close-menu {
+        margin-bottom: 2rem;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+        height: 100vh;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+        gap: 2.5rem;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+}
+
+/*------------------  Calzado ------------------*/
+.title-container {
+    margin-top: 5rem;
+    background-color: black;
+}
+
+.title-destacados {
+    font-size: 43px;
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+    color: white;
+    padding: 2rem 0;
+}
+
+.des-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product {
+    display: grid;
+    place-items: center;
+}
+
+.product-img {
+    height: 22rem;
+    width: 24rem;
+    border-radius: 15px;
+}
+
+.product-title {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 27px;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 27px;
+}
+
+/*------------------  Calzado ------------------*/
+@media (min-width: 830px) and (max-width: 1180px) {
+    .des-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr); /*Cambiar*/
+        gap: 8px;
+    }
+
+    .product3 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 2;
+    }
+
+}
+
+@media (max-width: 829px) {
+    .des-container {
+        flex-direction: column;
+    }
+
+    .product-img {
+        height: 16rem;
+        width: 18rem;
+    }
+
+    .product-title {
+        font-size: 22px;
+    }
+    
+    .product-price {
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+}
+
