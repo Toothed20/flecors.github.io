@@ -40,7 +40,7 @@ html {
     display: flex;
     gap: 1rem;
 }
- 
+
 .nav-text {
     font-family: 'Merriweather Sans';
     font-weight: 300;
@@ -53,9 +53,10 @@ html {
 .close-menu {
     display: none;
 }
-  
+
 /*------------------  Home ------------------*/
 .home {
+    background-color: #000;
     background-image: url(../Imagenes/Recursos/WEBP/Fondo.webp);
     background-size: cover;
     background-position: center;
@@ -277,22 +278,22 @@ html {
 
 @-webkit-keyframes scroll {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
       transform: translateX(calc(-250px * 5)); /*Cambiar*/
     }
-  }
-  
-  @keyframes scroll {
+}
+
+@keyframes scroll {
     0% {
-      transform: translateX(0);
+    transform: translateX(0);
     }
     100% {
       transform: translateX(calc(-250px * 5)); /*Cambiar*/
     }
-  }
-  
+}
+
 .slider {
     background: white;
     /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */

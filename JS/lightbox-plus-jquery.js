@@ -11195,35 +11195,37 @@ return jQuery;
   };
 
   // Display caption, image number, and closing button.
-  Lightbox.prototype.updateDetails = function() {
-    var self = this;
+Lightbox.prototype.updateDetails = function() {
+	var self = this;
 
-    // Enable anchor clicks in the injected caption html.
-    // Thanks Nate Wright for the fix. @https://github.com/NateWr
-    if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
-      this.album[this.currentImageIndex].title !== '') {
-      var $caption = this.$lightbox.find('.lb-caption');
-      if (this.options.sanitizeTitle) {
-        $caption.text(this.album[this.currentImageIndex].title);
-      } else {
-        $caption.html(this.album[this.currentImageIndex].title);
-      }
-      $caption.fadeIn('fast');
-    }
+	// Enable anchor clicks in the injected caption html.
+	// Thanks Nate Wright for the fix. @https://github.com/NateWr
+	if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
+	  this.album[this.currentImageIndex].title !== '') {
+	  var $caption = this.$lightbox.find('.lb-caption');
+	  var imageTitle = this.album[this.currentImageIndex].title;
+	  var contactInfo = '<br><a class="lb-contact" href="https://wa.me/9931506226?text=Estoy%20interesado%20en%20este%20producto:%20' + encodeURIComponent(imageTitle) + '" target="_blank">Mas información al 9931506226</a>'; // Add contact info with WhatsApp link
+	  if (this.options.sanitizeTitle) {
+		$caption.text(imageTitle);
+	  } else {
+		$caption.html(imageTitle + contactInfo);
+	  }
+	  $caption.fadeIn('fast');
+	}
 
-    if (this.album.length > 1 && this.options.showImageNumberLabel) {
-      var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
-      this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
-    } else {
-      this.$lightbox.find('.lb-number').hide();
-    }
+	if (this.album.length > 1 && this.options.showImageNumberLabel) {
+	  var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
+	  this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
+	} else {
+	  this.$lightbox.find('.lb-number').hide();
+	}
 
-    this.$outerContainer.removeClass('animating');
+	this.$outerContainer.removeClass('animating');
 
-    this.$lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
-      return self.sizeOverlay();
-    });
-  };
+	this.$lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
+	  return self.sizeOverlay();
+	});
+};
 
   // Preload previous and next images in set.
   Lightbox.prototype.preloadNeighboringImages = function() {
